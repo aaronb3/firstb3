@@ -1,0 +1,67 @@
+<form #empForm="ngForm" (ngSubmit)="onSubmit(empForm)" >
+  
+  <div class="form-gorup">
+    <input type="hidden" 
+           name="ID"
+           #ID="ngModel"
+           [(ngModel)]="employeeService.selectedEmployee.ID" >
+
+    <label for="">EmployeeName</label>
+    <input type="text"
+           class="form-control" 
+           placeholder="EmployeeName" 
+           name="EmployeeName" 
+           #EmployeeName="ngModel" 
+           [(ngModel)]="employeeService.selectedEmployee.EmployeeName"
+           required>
+    <div class="alert alert-danger" *ngIf=" EmployeeName.touched && EmployeeName.invalid" >This field is required</div>
+  </div>
+  
+  <div class="form-gorup">
+    <label for="">Gender</label>
+    <input type="text" 
+           class="form-control" 
+           placeholder="Gender" 
+           name="Gender" 
+           #Gender="ngModel" 
+           [(ngModel)]="employeeService.selectedEmployee.Gender">
+  
+  </div>
+  
+  <div class="form-gorup">
+    <label for="">Email</label>
+    <input type="text" 
+           class="form-control" 
+           placeholder="Email" 
+           name="Email" 
+           #Email="ngModel" 
+           [(ngModel)]="employeeService.selectedEmployee.Email">
+  
+  </div>
+  
+  <div class="form-gorup">
+    <label for="">DepartmentId</label>
+    <input type="number" 
+           class="form-control" 
+           placeholder="DepartmentId" 
+           name="DepartmentId" 
+           #DepartmentId="ngModel" 
+           [(ngModel)]="employeeService.selectedEmployee.DepartmentId">  
+  </div>
+  
+  <div class="form-gorup">
+      <label for="">IsActive</label>
+      <input type="number" 
+             class="form-control" 
+             placeholder="IsActive" 
+             name="IsActive" 
+             #IsActive="ngModel" 
+             [(ngModel)]="employeeService.selectedEmployee.IsActive">  
+    </div>
+
+  <br>
+  <br>
+
+  <button class="btn btn-success">Create</button>
+  <button class="btn btn-warning" type="button" (click)="resetForm(empForm)">Reset</button>
+</form>

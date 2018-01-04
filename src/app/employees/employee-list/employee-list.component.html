@@ -1,0 +1,18 @@
+<table class="table table-hover">
+  <thead>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Email</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </thead>
+  <tr *ngFor="let employee of employeeService.employeeList">
+    <td>{{employee.EmployeeName}}</td>
+    <td>{{employee.Gender}}</td>
+    <td>{{employee.Email}}</td>
+    <td><button class="btn btn-info btn-sm" (click)="showForEdit(employee)" >E</button></td>
+    <td><button class="btn btn-danger btn-sm" (click)="deleteEmployee(employee.ID)" >D</button></td>
+    
+  </tr>
+
+</table>
